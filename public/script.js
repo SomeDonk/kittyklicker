@@ -4,12 +4,14 @@ var app = new Vue({
     kittykount: 0,
     klickPower: 1,
     klickUpgradeCost: 10,
+    loading: true,
   },
   created() {
     this.getKitties();
   },
   methods: {
     async getKitties() {
+      this.loading = true;
       try {
         let response = await axios.get("http://cs260.jaredsw.com:4200/api/kittykount");
         this.kittykount = response.data;
@@ -24,6 +26,7 @@ var app = new Vue({
       catch (error) {
         console.log(error);
       }
+      this.loading = false;
     },
     async kittyKlicked() {
       console.log("In kittyKlicked, kittykount = " + this.kittykount);
