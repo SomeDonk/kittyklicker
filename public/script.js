@@ -21,7 +21,6 @@ var app = new Vue({
         console.log(response2.data);
         this.klickUpgradeCost = response2.data;
         console.log("In getKitties, kittykount = " + this.kittykount);
-        return true;
       }
       catch (error) {
         console.log(error);
@@ -36,7 +35,6 @@ var app = new Vue({
         this.kittykount = response.data.kount;
         this.klickPower = response.data.power;
         this.klickUpgradeCost = response.data.kost;
-        return true;
       }
       catch (error) {
         console.log(error);
