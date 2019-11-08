@@ -14,8 +14,8 @@
         </div>
         <div v-else>
             <img src="kittytobeklicked.png" v-on:click="kittyKlicked" />
-            <p>Kitties klicked: {{kittykount}}</p>
-            <p>You can spend {{klickUpgradeCost}} to double your klicking power! </p>
+            <p>{{kittykount}}</p>
+            <p>You can spend {{klickUpgradeCost}} to double the klicking power! </p>
             <button type="submit" v-on:click.prevent="doublePower">Double Klicking Power!</button>
             <p>Current klicking power: {{klickPower}}</p>
         </div>
