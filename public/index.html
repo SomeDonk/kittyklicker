@@ -11,12 +11,18 @@
         <h1>Kitty Klicker</h1>
         <img src="kittytobeklicked.png" v-on:click="kittyKlicked" />
         <p>Kitties klicked: {{kittykount}}</p>
+        <p>You can spend {{klickUpgradeCost}} to double your klicking power! </p>
+        <button type="submit" v-on:click.prevent="doublePower">Double Klicking Power!</button>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js" integrity="sha256-lrZTgsdM1iVdRigETFOU8u8/BmLX1ysQ8bzrULbuVFU=" crossorigin="anonymous"></script>
     <script src="/script.js"></script>
 </body>
+
+<foot>
+  <a href="https://github.com/SomeDonk/kittyklicker">GitHub</a>
+</foot>
 
 </html>
 
