@@ -35,7 +35,7 @@ app.post('/api/kittykount', (req, res) =>
 {
     console.log("in kittykount POST");
     kittykount += req.body.klickpower;
-    res.send({kount: kittykount.toString(), kost: klickupgradecost.toString(), power: klickpower.toString()});
+    res.send({kount: kittykount, kost: klickupgradecost, power: klickpower});
 });
 
 app.post('/api/doublepower', (req, res) =>
