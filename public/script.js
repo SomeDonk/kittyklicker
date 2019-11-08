@@ -13,10 +13,10 @@ var app = new Vue({
       try {
         let response = await axios.get("http://cs260.jaredsw.com:4200/api/kittykount");
         this.kittykount = response.data;
-        response = await axios.get("http://cs260.jaredsw.com:4200/api/klickpower");
-        this.klickPower = response.data;
-        response = await axios.get("http://cs260.jaredsw.com:4200/api/klickupgradecost");
-        this.klickUpgradeCost = response.data;
+        let response1 = await axios.get("http://cs260.jaredsw.com:4200/api/klickpower");
+        this.klickPower = response1.data;
+        let response2 = await axios.get("http://cs260.jaredsw.com:4200/api/klickupgradecost");
+        this.klickUpgradeCost = response2.data;
         console.log("In getKitties, kittykount = " + this.kittykount);
         return true;
       }
