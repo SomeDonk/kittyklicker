@@ -33,7 +33,9 @@ var app = new Vue({
       try {
         let response = await axios.post("http://cs260.jaredsw.com:4200/api/kittykount", { klickpower: this.klickPower });
         console.log(response.data);
-        this.kittykount = response.data;
+        this.kittykount = response.data.kount;
+        this.klickPower = response.data.power;
+        this.klickUpgradeCost = response.data.kost;
         return true;
       }
       catch (error) {
