@@ -1,0 +1,23 @@
+{
+  "name": "kittyklicker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SomeDonk/kittyklicker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SomeDonk/kittyklicker/issues"
+  },
+  "homepage": "https://github.com/SomeDonk/kittyklicker#readme",
+  "dependencies": {
+    "expres": "0.0.5",
+    "express": "^4.17.1"
+  }
+}
