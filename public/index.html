@@ -9,11 +9,16 @@
 <body>
     <div id="app">
         <h1>Kitty Klicker</h1>
-        <img src="kittytobeklicked.png" v-on:click="kittyKlicked" />
-        <p>Kitties klicked: {{kittykount}}</p>
-        <p>You can spend {{klickUpgradeCost}} to double your klicking power! </p>
-        <button type="submit" v-on:click.prevent="doublePower">Double Klicking Power!</button>
-        <p>Current klicking power: {{klickPower}}</p>
+        <div v-if="loading">
+            <p>Loading...</p>
+        </div>
+        <div v-else>
+            <img src="kittytobeklicked.png" v-on:click="kittyKlicked" />
+            <p>Kitties klicked: {{kittykount}}</p>
+            <p>You can spend {{klickUpgradeCost}} to double your klicking power! </p>
+            <button type="submit" v-on:click.prevent="doublePower">Double Klicking Power!</button>
+            <p>Current klicking power: {{klickPower}}</p>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
@@ -22,7 +27,7 @@
 </body>
 
 <foot>
-  <a href="https://github.com/SomeDonk/kittyklicker">GitHub</a>
+    <a href="https://github.com/SomeDonk/kittyklicker">GitHub</a>
 </foot>
 
 </html>
