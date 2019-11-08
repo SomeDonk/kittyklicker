@@ -3,7 +3,7 @@ var app = new Vue({
   data: {
     kittykount: 0,
     klickPower: 1,
-    klickUgradeCost: 10,
+    klickUpgradeCost: 10,
   },
   created() {
     this.getKitties();
@@ -16,7 +16,7 @@ var app = new Vue({
         response = await axios.get("http://cs260.jaredsw.com:4200/api/klickpower");
         this.klickPower = response.data;
         response = await axios.get("http://cs260.jaredsw.com:4200/api/klickupgradecost");
-        this.klickUgradeCost = response.data;
+        this.klickUpgradeCost = response.data;
         console.log("In getKitties, kittykount = " + this.kittykount);
         return true;
       }
@@ -39,10 +39,10 @@ var app = new Vue({
     async doublePower() {
       console.log("In double power");
       try {
-        if (this.kittykount >= this.klickUgradeCost) {
+        if (this.kittykount >= this.klickUpgradeCost) {
           this.klickPower = this.klickPower * 2;
-          this.kittykount = this.kittykount - this.klickUgradeCost;
-          this.klickUgradeCost = this.klickUgradeCost * 10;
+          this.kittykount = this.kittykount - this.klickUpgradeCost;
+          this.klickUpgradeCost = this.klickUpgradeCost * 10;
           let response = await axios.post("http://cs260.jaredsw.com:4200/api/doublepower", {klickpower: this.klickPower, kittykount: this.kittykount, klickupgradecost: this.klickUgradeCost});
         }
       }
