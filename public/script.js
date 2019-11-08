@@ -18,7 +18,6 @@ var app = new Vue({
         let response1 = await axios.get("http://cs260.jaredsw.com:4200/api/klickpower");
         this.klickPower = response1.data;
         let response2 = await axios.get("http://cs260.jaredsw.com:4200/api/klickupgradecost");
-        console.log(response2.data);
         this.klickUpgradeCost = response2.data;
         console.log("In getKitties, kittykount = " + this.kittykount);
       }
