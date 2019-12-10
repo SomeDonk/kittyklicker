@@ -52,7 +52,6 @@ userSchema.pre('save', async function(next) {
         next();
     }
     catch (error) {
-        console.log(error);
         next(error);
     }
 });
@@ -130,14 +129,14 @@ const port = 4200
 // });
 
 app.get('/api/klickinfo', async(req, res) => {
-    console.log("in klickinfo GET");
+    //console.log("in klickinfo GET");
 
     try {
         let items = await Info.find();
         res.send(items);
     }
     catch (error) {
-        console.log(error);
+        //console.log(error);
         res.sendStatus(500);
     }
 });
@@ -153,7 +152,7 @@ app.post('/api/start', async(req, res) => {
         res.send(item);
     }
     catch (error) {
-        console.log(error);
+        //console.log(error);
         res.sendStatus(500);
     }
 });
