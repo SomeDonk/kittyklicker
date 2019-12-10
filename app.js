@@ -34,17 +34,20 @@ app.get('/api/klickupgradecost', (req, res) =>
 app.post('/api/kittykount', (req, res) =>
 {
     console.log("in kittykount POST");
-    kittykount += req.body.klickpower;
-    res.send({kount: kittykount, kost: klickupgradecost, power: klickpower});
+    kittykount += klickpower;
+    res.send({ kount: kittykount, kost: klickupgradecost, power: klickpower });
 });
 
 app.post('/api/doublepower', (req, res) =>
 {
     console.log("in doublepower POST");
-    kittykount = req.body.kittykount;
-    klickpower = req.body.klickpower;
-    klickupgradecost = req.body.klickupgradecost;
-    res.send(kittykount.toString());
+    if (kittykount >= klickupgradecost)
+    {
+        kittykount -= klickupgradecost;
+        klickpower = klickpower * 2;
+        klickupgradecost = klickupgradecost * 4;
+    }
+    res.send({ kount: kittykount, kost: klickupgradecost, power: klickpower });
 });
 
 
