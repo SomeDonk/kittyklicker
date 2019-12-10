@@ -182,3 +182,27 @@ button.close:hover {
   background-color: #888;
   color: white;
 }
+
+.column_names {
+  float: left;
+  width: 70%;
+  text-align: right;
+}
+
+.column_scores {
+  padding: 0px 0px 0px 50px;
+  float: left;
+  width: auto;
+  text-align: left;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+ol {
+    width: 75%;
+}

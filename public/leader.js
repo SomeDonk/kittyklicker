@@ -19,9 +19,6 @@ var app = new Vue({
                 this.users.sort(function(a, b) {
                     return parseInt(b.score) - parseInt(a.score);
                 });
-
-                console.log("in getInfo");
-                console.log(this.users);
             }
             catch (error) {
                 console.log(error);

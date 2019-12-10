@@ -15,7 +15,10 @@
             <h1>Kitty Klicker Leader Board</h1>
             <ol>
                 <li v-for="user in users">
-                    {{ user.username }}: {{ user.score }}
+                    <div class="row">
+                        <div class="column_names">{{ user.username }}:</div>
+                        <div class="column_scores">{{ user.score }}</div>
+                    </div>
                 </li>
             </ol>
         </div>
