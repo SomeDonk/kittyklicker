@@ -13,14 +13,19 @@
         </div>
         <div v-else>
             <h1>Kitty Klicker Leader Board</h1>
-            <ol>
-                <li v-for="user in users">
-                    <div class="row">
-                        <div class="column_names">{{ user.username }}:</div>
-                        <div class="column_scores">{{ user.score }}</div>
-                    </div>
-                </li>
-            </ol>
+            <table>
+                <tr>
+                    <th>Rank</th>
+                    <th>Username</th>
+                    <th>Score</th>
+                </tr>
+                
+                <tr v-for="user in users">
+                    <td>{{user.rank}}</td>
+                    <td>{{user.username}}</td>
+                    <td>{{user.score}}</td>
+                </tr>
+            </table>
         </div>
     </div>
 

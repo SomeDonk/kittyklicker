@@ -187,7 +187,7 @@ app.post('/api/doublepower/:id', async(req, res) => {
         if (item.kount >= item.kost) {
             item.kount -= item.kost;
             item.power *= 2;
-            item.kost *= 4;
+            item.kost *= 2;
             await item.save();
         }
         res.send({ kount: item.kount, kost: item.kost, power: item.power });

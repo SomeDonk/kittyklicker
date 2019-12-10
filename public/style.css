@@ -24,6 +24,11 @@ textarea {
     height: 100px;
 }
 
+table {
+  width: 100%;
+  text-align: center;
+}
+
 foot {
     position: relative;
     bottom: 0;

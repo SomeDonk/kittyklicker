@@ -19,6 +19,10 @@ var app = new Vue({
                 this.users.sort(function(a, b) {
                     return parseInt(b.score) - parseInt(a.score);
                 });
+                
+                for (let i = 0; i < this.users.length; i++) {
+                    this.users[i].rank = i+1;
+                }
             }
             catch (error) {
                 console.log(error);
