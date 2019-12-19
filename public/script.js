@@ -23,7 +23,6 @@ var app = new Vue({
       this.loading = true;
       try {
         let response = await axios.get("http://cs260.showardbyu.com:4200/api/klickinfo");
-        if (response === null) await this.startItem();
         this.items = response.data;
         console.log(this.items);
         this.kittyKount = this.items[0].kount;
@@ -34,6 +33,8 @@ var app = new Vue({
       }
       catch (error) {
         console.log(error);
+        console.log("starting again");
+        await this.startItem();
       }
       this.loading = false;
     },
@@ -54,6 +55,8 @@ var app = new Vue({
     async kittyKlicked() {
       console.log("In kittyKlicked, kittyKount = " + this.kittyKount);
       try {
+        console.log(this.items);
+        console.log(this.user);
         let response = await axios.post("http://cs260.showardbyu.com:4200/api/kittykount/" + this.items[0]._id + "/" + this.user._id);
         console.log(response.data);
         this.kittyKount = response.data.kount;
@@ -78,7 +81,7 @@ var app = new Vue({
         console.log(error);
       }
     },
-    
+
     toggleForm() {
       this.error = "";
       this.username = "";

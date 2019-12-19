@@ -136,7 +136,7 @@ app.get('/api/klickinfo', async(req, res) => {
         res.send(items);
     }
     catch (error) {
-        //console.log(error);
+        console.log(error);
         res.sendStatus(500);
     }
 });
@@ -187,7 +187,7 @@ app.post('/api/doublepower/:id', async(req, res) => {
         if (item.kount >= item.kost) {
             item.kount -= item.kost;
             item.power *= 2;
-            item.kost *= 2;
+            item.kost *= 3;
             await item.save();
         }
         res.send({ kount: item.kount, kost: item.kost, power: item.power });
